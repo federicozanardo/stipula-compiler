@@ -1,0 +1,3 @@
+rootProject.name = 'stipula-compiler'
+
+include ':test-compiler-storage', ':compiler-core'
