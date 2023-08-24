@@ -1,6 +1,6 @@
 [submodule "compiler-core"]
 	path = compiler-core
 	url = https://github.com/federicozanardo/compiler-core
-[submodule "storage-core"]
-	path = storage-core
-	url = https://github.com/federicozanardo/storage-core
+[submodule "storage-core-leveldb"]
+	path = storage-core-leveldb
+	url = https://github.com/federicozanardo/storage-core-leveldb

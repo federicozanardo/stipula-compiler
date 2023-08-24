@@ -1,4 +1,4 @@
 rootProject.name = 'stipula-compiler'
 
 include ':stipula-compiler', ':compiler-core'
-include ':stipula-compiler', ':storage-core'
+include ':stipula-compiler', ':storage-core-leveldb'
