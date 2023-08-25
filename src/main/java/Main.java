@@ -1,7 +1,7 @@
 import commands.CompileCommand;
 import commands.HelpCommand;
 import compiler.module.CompilerModule;
-import lcp.lib.communication.module.channel.ModelChannelUtils;
+import lcp.lib.communication.module.channel.ModuleChannelUtils;
 import lcp.lib.exceptions.communication.module.RegisterModuleException;
 import lcp.lib.exceptions.communication.module.channel.RegisterChannelException;
 import lombok.extern.slf4j.Slf4j;
@@ -64,8 +64,8 @@ public class Main {
 
     private static void setupChannels(StipulaCompilerModule stipulaCompilerModule, CompilerModule compilerModule, StorageModule storageModule) {
         try {
-            ModelChannelUtils.setupChannel(stipulaCompilerModule, compilerModule);
-            ModelChannelUtils.setupChannel(compilerModule, storageModule);
+            ModuleChannelUtils.setupChannel(stipulaCompilerModule, compilerModule);
+            ModuleChannelUtils.setupChannel(compilerModule, storageModule);
         } catch (RegisterModuleException | RegisterChannelException e) {
             // TODO: handle it
             throw new RuntimeException(e);
