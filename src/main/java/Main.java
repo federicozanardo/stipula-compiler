@@ -12,7 +12,11 @@ import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.log4j.BasicConfigurator;
-import storage.module.StorageModule;
+import storage.core.lib.exceptions.database.DatabaseException;
+import storage.core.lib.module.StorageModule;
+import storage.module.LevelDBStorageModule;
+import storage.module.services.asset.AssetsStorageService;
+import storage.module.services.ownership.OwnershipsStorageService;
 
 @Slf4j
 public class Main {
@@ -20,11 +24,16 @@ public class Main {
         BasicConfigurator.configure();
 
         StipulaCompilerModule stipulaCompilerModule = new StipulaCompilerModule();
-        CompilerModule compilerModule = new CompilerModule(StorageModule.class.getSimpleName());
-        StorageModule storageModule = new StorageModule();
+        CompilerModule compilerModule = new CompilerModule(LevelDBStorageModule.class.getSimpleName());
+        LevelDBStorageModule storageModule = new LevelDBStorageModule();
 
         // TODO: remove it
-        //storageModule.seed();
+        /*try {
+            seed(assetsStorageService, ownershipsStorageService);
+        } catch (DatabaseException e) {
+            throw new RuntimeException(e);
+        }*/
+        // storageModule.seed();
 
         // Setup channels
         setupChannels(stipulaCompilerModule, compilerModule, storageModule);
@@ -61,5 +70,10 @@ public class Main {
             // TODO: handle it
             throw new RuntimeException(e);
         }
+    }
+
+    private static void seed(AssetsStorageService assetsStorageService, OwnershipsStorageService ownershipsStorageService) throws DatabaseException {
+        assetsStorageService.seed();
+        ownershipsStorageService.seed();
     }
 }
