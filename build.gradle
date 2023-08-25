@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'stipula.compiler'
-version = '0.1.1'
+version = '0.1.2'
 
 repositories {
     mavenCentral()
@@ -16,7 +16,7 @@ dependencies {
     implementation project(':storage-core-leveldb')
 
     // Dependencies required by modules
-    implementation 'com.github.federicozanardo:lcp-lib:v0.1.31'
+    implementation 'com.github.federicozanardo:lcp-lib:v0.1.33'
     implementation 'com.github.federicozanardo:storage-core-lib:v0.1.4'
     implementation 'org.iq80.leveldb:leveldb-api:0.12'
     implementation 'org.iq80.leveldb:leveldb:0.12'
