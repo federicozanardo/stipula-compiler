@@ -72,8 +72,8 @@ public class Main {
         }
     }
 
-    private static void seed(AssetsStorageService assetsStorageService, OwnershipsStorageService ownershipsStorageService) throws DatabaseException {
+    /*private static void seed(AssetsStorageService assetsStorageService, OwnershipsStorageService ownershipsStorageService) throws DatabaseException {
         assetsStorageService.seed();
         ownershipsStorageService.seed();
-    }
+    }*/
 }
